@@ -2,11 +2,16 @@ package main
 
 import (
 	"fmt"
-	"log"
 	"os"
 
+	"github.com/rs/zerolog"
+	"github.com/rs/zerolog/log"
 	"github.com/urfave/cli/v2"
 )
+
+func init() {
+	log.Logger = log.Output(zerolog.ConsoleWriter{Out: os.Stderr})
+}
 
 func main() {
 	app := &cli.App{
@@ -14,28 +19,10 @@ func main() {
 		Usage: "Export token balances",
 		Flags: []cli.Flag{
 			&cli.StringFlag{
-				Name:     "host",
-				Usage:    "Warehouse DB Host",
+				Name:     "dsn",
+				Usage:    "Warehouse DB DSN",
 				Required: true,
-				EnvVars:  []string{"DB_HOST"},
-			},
-			&cli.StringFlag{
-				Name:     "port",
-				Usage:    "Warehouse DB Port",
-				Required: true,
-				EnvVars:  []string{"DB_PORT"},
-			},
-			&cli.StringFlag{
-				Name:     "username",
-				Usage:    "Warehouse DB Username",
-				Required: true,
-				EnvVars:  []string{"DB_USERNAME"},
-			},
-			&cli.StringFlag{
-				Name:     "password",
-				Usage:    "Warehouse DB Password",
-				Required: true,
-				EnvVars:  []string{"DB_PASSWORD"},
+				EnvVars:  []string{"DB_DSN"},
 			},
 			&cli.StringFlag{
 				Name:    "rpc",
@@ -72,10 +59,20 @@ func main() {
 				},
 			},
 		},
+		Before: func(c *cli.Context) error {
+			if err := connectDb(c.String("dsn")); err != nil {
+				log.Fatal().Err(err).Msg("failed to connect to postgres")
+			}
+
+			return nil
+		},
+		After: func(c *cli.Context) error {
+			return nil
+		},
 	}
 
 	err := app.Run(os.Args)
 	if err != nil {
-		log.Fatal(err)
+		log.Fatal().Err(err).Msg("could not run CLI")
 	}
 }
