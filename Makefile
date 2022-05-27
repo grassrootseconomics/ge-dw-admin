@@ -1,4 +1,4 @@
-BIN := export-balance
+BIN := ge-staff
 
 .PHONY: build
 build:

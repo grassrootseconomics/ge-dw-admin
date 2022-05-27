@@ -1,8 +1,10 @@
-module export-balance
+module ge-staff
 
 go 1.18
 
 require (
+	github.com/ethereum/go-ethereum v1.10.18
+	github.com/georgysavva/scany v1.0.0
 	github.com/grassrootseconomics/cic-go v1.5.0
 	github.com/jackc/pgx/v4 v4.16.1
 	github.com/rs/zerolog v1.15.0
@@ -15,7 +17,6 @@ require (
 	github.com/cpuguy83/go-md2man/v2 v2.0.1 // indirect
 	github.com/deckarep/golang-set v1.8.0 // indirect
 	github.com/decred/dcrd/dcrec/secp256k1/v4 v4.0.1 // indirect
-	github.com/ethereum/go-ethereum v1.10.18 // indirect
 	github.com/go-ole/go-ole v1.2.1 // indirect
 	github.com/go-stack/stack v1.8.0 // indirect
 	github.com/gorilla/websocket v1.4.2 // indirect
@@ -28,6 +29,7 @@ require (
 	github.com/jackc/pgtype v1.11.0 // indirect
 	github.com/jackc/puddle v1.2.1 // indirect
 	github.com/lmittmann/w3 v0.7.0 // indirect
+	github.com/pkg/errors v0.9.1 // indirect
 	github.com/russross/blackfriday/v2 v2.1.0 // indirect
 	github.com/shirou/gopsutil v3.21.4-0.20210419000835-c7a38de76ee5+incompatible // indirect
 	github.com/tklauser/go-sysconf v0.3.5 // indirect
