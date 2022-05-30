@@ -1,18 +1,18 @@
-# ge-staff-cli
+# ge-dw-admin
 
 ![GitHub release (latest by date)](https://img.shields.io/github/v/release/grassrootseconomics/ge-staff-cli)
 ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/grassrootseconomics/ge-staff-cli/goreleaser)
 
-> GE Staff CLI
+> GE DW Admin CLI (Admin operations on the Datwarehouse )
 
 ## Usage
 
 ```bash
 NAME:
-   ge-staff - GE Back Office Ops CLI
+   ge-dw-admin - GE Back Office Ops CLI
 
 USAGE:
-   ge-staff [global options] command [command options] [arguments...]
+   ge-dw-admin [global options] command [command options] [arguments...]
 
 COMMANDS:
    export-balances  Export balances by token to a CSV file

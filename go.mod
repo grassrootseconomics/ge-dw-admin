@@ -1,4 +1,4 @@
-module ge-staff
+module ge-dw-admin
 
 go 1.18
 

@@ -1,4 +1,4 @@
-BIN := ge-staff
+BIN := ge-dw-admin
 
 .PHONY: build
 build:

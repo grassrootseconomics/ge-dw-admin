@@ -7,7 +7,7 @@ builds:
       - amd64
     main: ./cmd
     ldflags:
-      - -s -w
+      - -s -w -o ge-dw-admin
 
 archives:
   - format: tar.gz

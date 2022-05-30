@@ -15,8 +15,8 @@ func init() {
 
 func main() {
 	app := &cli.App{
-		Name:  "ge-staff",
-		Usage: "GE Back Office Ops CLI",
+		Name:  "ge-dw-admin",
+		Usage: "GE DW Admin CLI",
 		Flags: []cli.Flag{
 			&cli.StringFlag{
 				Name:     "dsn",
@@ -83,6 +83,6 @@ func main() {
 
 	err := app.Run(os.Args)
 	if err != nil {
-		log.Fatal().Err(err).Msg("could not run ge-staff CLI")
+		log.Fatal().Err(err).Msg("could not run ge-admin CLI")
 	}
 }
