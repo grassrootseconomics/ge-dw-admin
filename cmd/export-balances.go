@@ -55,6 +55,7 @@ func exportBalancestoCSV(ctx context.Context, tokenSymbol string) error {
 	defer w.Flush()
 
 	headers := []string{
+		"voucher_symbol",
 		"holder_address",
 		"phone",
 		"balance",
@@ -77,6 +78,7 @@ func exportBalancestoCSV(ctx context.Context, tokenSymbol string) error {
 
 		row = append(
 			row,
+			tokenSymbol,
 			r.Address,
 			r.Phone,
 			balance.String(),
