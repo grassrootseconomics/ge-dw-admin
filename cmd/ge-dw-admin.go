@@ -32,7 +32,7 @@ func main() {
 			},
 			&cli.StringFlag{
 				Name:    "token-index",
-				Value:   "0x5A1EB529438D8b3cA943A45a48744f4c73d1f098",
+				Value:   "0x885190Daf52F011B7F6954a255ef5247b04ff70f",
 				Usage:   "Sarafu Network Token Index",
 				EnvVars: []string{"TOKEN_INDEX"},
 			},
